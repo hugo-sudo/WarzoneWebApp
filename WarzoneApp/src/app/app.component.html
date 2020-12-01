@@ -1,0 +1,71 @@
+<div class="centered-content">
+    <div class="main-container">
+        <div class="sidebar has-background-white">
+            <h1 class="title">Platform</h1>
+            <div class="platform-menu">
+                <!-- <a class="platform1  is-active">
+                    <p class="psn">PlayStation</p>
+                </a>
+                <a class="platform2">
+                    <p class="xbox">Xbox</p>
+                </a>
+                <a class="platform3">
+                    <p class="battle">Battle.net</p>
+                </a>
+                <a class="platform3">
+                    <button (click)="playerStats()">Test</button>
+                </a> -->
+                <div class="select is-rounded">
+                    <select id="platform_chosen">
+                      <option id="psn">PlayStation</option>
+                      <option class="xb1">Xbox</option>
+                      <option class="battle">Battle.net</option>
+                    </select>
+                  </div>
+            </div>
+        </div>
+        <div class="info-container has-background-light">
+            <div class="field has-addons">
+                <div class="control">
+                  <input id="gamerTag"class="input" type="text" placeholder="Search a player">
+                </div>
+                <div class="control">
+                  <a class="button is-info has-background-grey" (click)="playerStats()">
+                    Search
+                  </a>
+            </div>
+            </div>
+            <div class="current-container">
+                <div class="subtitle">Current Stats</div>
+                <div class="grid-item1">{{ data['br'].kills }}<br><strong>Kills</strong></div>
+                <div class="grid-item2">{{ data['br'].deaths }}<br><strong>Deaths</strong></div>
+                <div class="grid-item3">{{ data['br'].kdRatio }}<br><strong>K/D Ratio</strong></div>
+                <div class="grid-item4">{{ data['br'].downs }}<br><strong>Downs</strong></div>
+                <div class="grid-item5">{{ data['br'].wins }}<br><strong>Wins</strong></div>
+                <div class="grid-item6">{{ data['br'].topFive }}<br><strong>Top 5</strong></div>
+                <div class="grid-item7">{{ data['br'].topTen }}<br><strong>Top 10</strong></div>
+                <div class="grid-item8">{{ data['br'].topTwentyFive }}<br><strong>Top 25</strong></div>
+            </div>
+            <div class="field has-addons" style="position:absolute">
+                <div class="control">
+                  <input id="gamerTagWeek"class="input" type="text" placeholder="Search a player">
+                </div>
+                <div class="control">
+                  <a class="button is-info has-background-grey" (click)="playerStatsWeek()">
+                    Search
+                  </a>
+            </div>
+            <div class="this-week-container">
+                <div class="subtitle">This Week Stats</div>
+                <div class="grid-item9">{{ dataWeek['wz']['mode']['br_all']['properties'].kills }}<br><strong>Kills</strong></div>
+                <div class="grid-item10">{{ dataWeek['wz']['mode']['br_all']['properties'].deaths }}<br><strong>Deaths</strong></div>
+                <div class="grid-item11">{{ dataWeek['wz']['mode']['br_all']['properties'].kdRatio }}<br><strong>K/D Ratio</strong></div>
+                <div class="grid-item12">{{ dataWeek['wz']['mode']['br_all']['properties'].downs }}<br><strong>Downs</strong></div>
+                <div class="grid-item13">{{ dataWeek['wz']['mode']['br_all']['properties'].wins }}<br><strong>Wins</strong></div>
+                <div class="grid-item14">{{ dataWeek['wz']['mode']['br_all']['properties'].topFive }}<br><strong>Top 5</strong></div>
+                <div class="grid-item15">{{ dataWeek['wz']['mode']['br_all']['properties'].topTen }}<br><strong>Top 10</strong></div>
+                <div class="grid-item16">{{ dataWeek['wz']['mode']['br_all']['properties'].topTwentyFive }}<br><strong>Top 25</strong></div>
+            </div>
+        </div>
+    </div>
+</div>
