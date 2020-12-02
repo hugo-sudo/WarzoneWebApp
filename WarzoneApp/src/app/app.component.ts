@@ -15,8 +15,6 @@ export class AppComponent {
   playerStats() {
     let gamerTag:string = (document.getElementById("gamerTag") as HTMLInputElement).value;
     let platform_chosen:string = (document.getElementById("platform_chosen") as HTMLInputElement).value;
-    console.log(platform_chosen);
-    console.log(gamerTag);
     if (platform_chosen.localeCompare("PlayStation")==0) {
       this.codapi.playerStats(gamerTag,"psn").subscribe((res) => {
         this.data = res;
@@ -39,21 +37,19 @@ export class AppComponent {
   playerStatsWeek() {
     let gamerTag:string = (document.getElementById("gamerTagWeek") as HTMLInputElement).value;
     let platform_chosen:string = (document.getElementById("platform_chosen") as HTMLInputElement).value;
-    console.log(platform_chosen);
-    console.log(gamerTag);
     if (platform_chosen.localeCompare("PlayStation")==0) {
-      this.codapi.playerStatsWeek(gamerTag,"psn").subscribe((res) => {
-        this.dataWeek = res;
+      this.codapi.playerStatsWeek(gamerTag,"psn").subscribe((resp) => {
+        this.dataWeek = resp;
         console.log('JSON Response Week= ', this.dataWeek); ;
       });
     } else if (platform_chosen.localeCompare("Battle.net")==0) {
-      this.codapi.playerStatsWeek(gamerTag,"battle").subscribe((res) => {
-        this.dataWeek = JSON.parse(res);
+      this.codapi.playerStatsWeek(gamerTag,"battle").subscribe((resp) => {
+        this.dataWeek = JSON.parse(resp);
         console.log('JSON Response Week= ', JSON.parse(this.dataWeek)); ;
       });
     } else if (platform_chosen.localeCompare("Xbox")==0){
-      this.codapi.playerStatsWeek(gamerTag,"xb1").subscribe((res) => {
-        this.dataWeek = res;
+      this.codapi.playerStatsWeek(gamerTag,"xb1").subscribe((resp) => {
+        this.dataWeek = resp;
         console.log('JSON Response Week= ', JSON.stringify(this.dataWeek)); ;
       });
     }
