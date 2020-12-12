@@ -36,7 +36,7 @@ export class CodapiService {
     }
       if(platform.localeCompare("battle") == 0) {
         var linkGamerTag = gamertag.replace("#","%2523");
-        return this.http.get("https://call-of-duty-modern-warfare.p.rapidapi.com/weekly-stats/"+linkGamerTag+"/battle",options);
+        return this.http.get("https://call-of-duty-modern-warfare.p.rapidapi.com/weekly-stats/Slayerzeus%25232101/battle",options);
       } else if (platform.localeCompare("psn") == 0) {
         return this.http.get("https://call-of-duty-modern-warfare.p.rapidapi.com/weekly-stats/"+gamertag+"/psn",options);
       } else {
